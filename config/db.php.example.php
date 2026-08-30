@@ -1,6 +1,4 @@
-
-
- <?php
+<?php
 $host = "localhost";
 $user = "YOUR_DB_USER";
 $pass = "YOUR_DB_PASSWORD";
@@ -13,5 +11,3 @@ try {
     die("Database Connection Failed: " . $e->getMessage());
 }
 ?>
-
-
