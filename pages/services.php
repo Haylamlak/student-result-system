@@ -15,7 +15,7 @@
         </div>
         <div class="service-card">
             <h3>Secure Data Access</h3>
-            <p>Industry-standard password hashing and prepared database queries to ensure maximum privacy[cite: 1].</p>
+            <p>Industry-standard password hashing and prepared database queries to ensure maximum privacy.</p>
         </div>
     </div>
 </main>

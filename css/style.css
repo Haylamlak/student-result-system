@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. ROOT VARIABLES & GLOBAL RESET
+   ========================================================================== */
 :root {
     --primary-color: #2563eb;
     --primary-hover: #1d4ed8;
@@ -27,7 +30,14 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Header */
+/* Utility Margin Classes */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.8rem; }
+
+/* ==========================================================================
+   2. NAVIGATION & HEADER
+   ========================================================================== */
 header {
     background: #0f172a;
     padding: 1rem 0;
@@ -56,12 +66,15 @@ header nav ul li a {
     border-radius: 6px;
 }
 
-header nav ul li a:hover {
+header nav ul li a:hover,
+header nav ul li a.active {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Layout Containers */
+/* ==========================================================================
+   3. LAYOUT CONTAINERS & HERO SECTION
+   ========================================================================== */
 .container {
     width: 90%;
     max-width: 1100px;
@@ -73,14 +86,26 @@ header nav ul li a:hover {
     flex: 1;
 }
 
-/* Hero Section (Home) */
 .hero {
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 4rem 1.5rem;
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
     border-radius: 12px;
     margin-bottom: 2rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #38bdf8;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .hero h1 {
@@ -94,15 +119,106 @@ header nav ul li a:hover {
     font-size: 1.15rem;
     color: #94a3b8;
     max-width: 650px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 1.5rem auto;
 }
 
-/* Cards & Grid System */
+/* Hero Buttons Wrapper */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   4. BUTTON STYLES & VARIANTS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 170px;
+    padding: 0.85rem 1.8rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #0f172a !important;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
+}
+
+/* Table Action Buttons */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.btn-sm {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.btn-edit { background-color: #f59e0b; }
+.btn-edit:hover { background-color: #d97706; }
+
+.btn-delete { background-color: #ef4444; }
+.btn-delete:hover { background-color: #dc2626; }
+
+/* ==========================================================================
+   5. CARDS, GRID & ABOUT PAGE COMPONENTS
+   ========================================================================== */
+.section-title {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .service-card {
@@ -115,7 +231,7 @@ header nav ul li a:hover {
 
 .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .service-card h3 {
@@ -123,7 +239,82 @@ header nav ul li a:hover {
     margin-bottom: 0.8rem;
 }
 
-/* Forms Styling */
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* About Page Developer Card */
+.page-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.profile-card {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1.8rem;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.badge-primary {
+    background: #dbeafe;
+    color: var(--primary-color);
+}
+
+.profile-details p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.98rem;
+}
+
+/* Custom Check List */
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.8rem;
+}
+
+.styled-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.styled-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   6. FORMS & ALERTS
+   ========================================================================== */
 .form-container {
     max-width: 450px;
     margin: 2rem auto;
@@ -164,28 +355,6 @@ header nav ul li a:hover {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    width: 100%;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    transition: background 0.2s ease;
-}
-
-.btn:hover {
-    background: var(--primary-hover);
-}
-
-/* Alerts */
 .alert {
     padding: 0.8rem 1rem;
     border-radius: 6px;
@@ -202,7 +371,9 @@ header nav ul li a:hover {
     border-color: #a7f3d0;
 }
 
-/* Modern Data Tables */
+/* ==========================================================================
+   7. DATA TABLES
+   ========================================================================== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -224,19 +395,13 @@ th {
     text-transform: uppercase;
 }
 
-tr:nth-child(even) {
-    background-color: #f8fafc;
-}
+tr:nth-child(even) { background-color: #f8fafc; }
+tr:hover { background-color: #f1f5f9; }
+td { border-bottom: 1px solid var(--border-color); }
 
-tr:hover {
-    background-color: #f1f5f9;
-}
-
-td {
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Footer */
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
 footer {
     background: #0f172a;
     color: #94a3b8;
@@ -246,50 +411,34 @@ footer {
     font-size: 0.9rem;
 }
 
-
-/* add  */
-/* Action Buttons */
-/* Responsive Action Buttons Layout */
-.action-buttons {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-}
-
-.btn-sm {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.8rem;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 600;
-    display: inline-block;
-    transition: background-color 0.2s ease;
-    text-align: center;
-}
-
-.btn-edit {
-    background-color: #f59e0b;
-}
-
-.btn-edit:hover {
-    background-color: #d97706;
-}
-
-.btn-delete {
-    background-color: #ef4444;
-}
-
-.btn-delete:hover {
-    background-color: #dc2626;
-}
-
-/* Mobile Responsive Adjustments */
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media screen and (max-width: 640px) {
     .container {
-        padding: 1rem;
+        padding: 1.25rem;
         width: 95%;
+    }
+
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
     }
 
     table {
