@@ -1,6 +1,6 @@
 <?php
-require_once 'config/db.php';
-include 'includes/header.php';
+require_once '../config/db.php';
+include '../includes/header.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -127,4 +127,4 @@ if ($userRole === 'admin' && isset($_GET['delete_id'])) {
     <?php endif; ?>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
-require_once 'config/db.php';
-include 'includes/header.php';
+require_once '../config/db.php';
+include '../includes/header.php';
 
 $msg = '';
 $msgClass = '';
@@ -50,4 +50,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
