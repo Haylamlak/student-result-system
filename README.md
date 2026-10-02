@@ -57,30 +57,6 @@ Access the application in your browser at http://localhost/student-result-manage
 admin: admin@gmail.com  password: admin123  
 User:  gebreeyesusayelgn027@gmail.com  password: hayle12345678 
 
-📁 Project Structure
-
-
-├── config/
-│   └── db.php             # Database connection setup (PDO)
-├── css/
-│   └── style.css          # Main stylesheet & custom utility classes
-├── includes/
-│   ├── header.php         # Universal navigation header & session handler
-│   └── footer.php         # Global footer component
-├── pages/
-│   ├── login.php          # User authentication entry
-│   ├── register.php       # New user account creation
-│   ├── dashboard.php      # Dynamic role-based dashboard (Admin / Student)
-│   ├── add-result.php     # Admin interface to record new grades
-│   ├── edit-result.php    # Admin interface to update existing grades
-│   ├── delete-result.php  # Admin action handler for deleting records
-│   ├── about.php         # Developer credentials & project architecture
-│   ├── services.php      # Platform capabilities breakdown
-│   └── contact.php       # Contact form support interface
-├── index.php              # Public landing page
-├── schema.sql             # SQL database structure dump
-└── README.md              # Project documentation
-
    👨‍💻 Developer Information
 Developer: Haylamlak Ayelgn Assefa
 
